@@ -6,46 +6,25 @@
     <title>LILBET - Лучшие коэффициенты и быстрые выплаты</title>
     <meta name="description" content="Официальный сайт LILBET. Высокие коэффициенты до 98%, быстрые выплаты, приветственный бонус 100% до 50,000₽">
     <style>
-        :root {
-            --primary-bg: #1a2849;
-            --logo-green: linear-gradient(45deg, #00ff88, #00cc66);
-            --accent-pink: #ff0080;
-            --text-white: #ffffff;
-            --cta-green: #00ff66;
-            --geometry: rgba(255,255,255,0.1);
-            --card-bg: rgba(26,40,73,0.9);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Arial', 'Helvetica', sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-white);
+        html, body {
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #1a2849 !important;
+            color: #ffffff !important;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Geometric Background Elements */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 20%, var(--geometry) 2px, transparent 2px),
-                radial-gradient(circle at 80% 80%, var(--geometry) 1px, transparent 1px),
-                linear-gradient(45deg, transparent 48%, var(--geometry) 49%, var(--geometry) 51%, transparent 52%),
-                linear-gradient(-45deg, transparent 48%, var(--geometry) 49%, var(--geometry) 51%, transparent 52%);
-            background-size: 100px 100px, 150px 150px, 200px 200px, 200px 200px;
-            opacity: 0.3;
-            z-index: 1;
+        /* Ensure body background is always applied */
+        body {
+            background: #1a2849 !important;
+            min-height: 100vh;
         }
 
         .container {
@@ -78,16 +57,17 @@
         .logo {
             font-size: 28px;
             font-weight: bold;
-            background: var(--logo-green);
+            background: linear-gradient(45deg, #00ff88, #00cc66);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-decoration: none;
+            color: #00ff88; /* Fallback */
         }
 
         .header-cta {
-            background: var(--cta-green);
-            color: var(--primary-bg);
+            background: #00ff66;
+            color: #1a2849;
             padding: 12px 24px;
             border-radius: 25px;
             text-decoration: none;
@@ -108,7 +88,22 @@
             align-items: center;
             position: relative;
             padding-top: 80px;
-            background: var(--primary-bg);
+            background: #1a2849;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 2px, transparent 2px),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 100px 100px, 150px 150px;
+            opacity: 0.3;
+            z-index: 1;
         }
 
         .hero-content {
@@ -124,25 +119,24 @@
             font-weight: bold;
             margin-bottom: 20px;
             line-height: 1.2;
+            color: #ffffff;
         }
 
         .hero-text h1 .accent {
-            background: linear-gradient(45deg, var(--accent-pink), #ff4da6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ff0080;
         }
 
         .hero-subtitle {
             font-size: 1.3rem;
             margin-bottom: 30px;
             opacity: 0.9;
+            color: #ffffff;
         }
 
         .hero-cta {
             display: inline-block;
-            background: var(--cta-green);
-            color: var(--primary-bg);
+            background: #00ff66;
+            color: #1a2849;
             padding: 18px 40px;
             border-radius: 30px;
             text-decoration: none;
@@ -163,12 +157,13 @@
             align-items: center;
             gap: 10px;
             font-size: 1.1rem;
+            color: #ffffff;
         }
 
         .online-dot {
             width: 12px;
             height: 12px;
-            background: var(--cta-green);
+            background: #00ff66;
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
@@ -188,7 +183,7 @@
         .sports-icon {
             width: 300px;
             height: 300px;
-            background: var(--logo-green);
+            background: linear-gradient(45deg, #00ff88, #00cc66);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -218,7 +213,7 @@
         .trust-item {
             text-align: center;
             padding: 30px 20px;
-            background: var(--card-bg);
+            background: rgba(26,40,73,0.9);
             border-radius: 15px;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
@@ -233,18 +228,20 @@
         .trust-icon {
             font-size: 3rem;
             margin-bottom: 15px;
-            color: var(--cta-green);
+            color: #00ff66;
         }
 
         .trust-title {
             font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 10px;
+            color: #ffffff;
         }
 
         .trust-desc {
             opacity: 0.8;
             font-size: 0.95rem;
+            color: #ffffff;
         }
 
         /* Benefits Section */
@@ -257,6 +254,7 @@
             font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 50px;
+            color: #ffffff;
         }
 
         .benefits-grid {
@@ -266,7 +264,7 @@
         }
 
         .benefit-card {
-            background: var(--card-bg);
+            background: rgba(26,40,73,0.9);
             padding: 40px 30px;
             border-radius: 20px;
             text-align: center;
@@ -284,7 +282,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--logo-green);
+            background: linear-gradient(45deg, #00ff88, #00cc66);
         }
 
         .benefit-card:hover {
@@ -296,15 +294,17 @@
             font-size: 1.8rem;
             font-weight: bold;
             margin-bottom: 15px;
+            color: #ffffff;
         }
 
         .benefit-title .accent {
-            color: var(--accent-pink);
+            color: #ff0080;
         }
 
         .benefit-desc {
             font-size: 1.1rem;
             opacity: 0.9;
+            color: #ffffff;
         }
 
         /* Welcome Bonus Section */
@@ -318,16 +318,18 @@
             font-size: 3rem;
             font-weight: bold;
             margin-bottom: 20px;
+            color: #ffffff;
         }
 
         .bonus-title .accent {
-            color: var(--accent-pink);
+            color: #ff0080;
         }
 
         .bonus-subtitle {
             font-size: 1.5rem;
             margin-bottom: 30px;
             opacity: 0.9;
+            color: #ffffff;
         }
 
         .timer {
@@ -338,7 +340,7 @@
         }
 
         .timer-item {
-            background: var(--card-bg);
+            background: rgba(26,40,73,0.9);
             padding: 20px;
             border-radius: 15px;
             min-width: 80px;
@@ -348,17 +350,18 @@
         .timer-number {
             font-size: 2rem;
             font-weight: bold;
-            color: var(--cta-green);
+            color: #00ff66;
         }
 
         .timer-label {
             font-size: 0.9rem;
             opacity: 0.8;
+            color: #ffffff;
         }
 
         .bonus-cta {
             display: inline-block;
-            background: linear-gradient(45deg, var(--accent-pink), #ff4da6);
+            background: linear-gradient(45deg, #ff0080, #ff4da6);
             color: white;
             padding: 20px 50px;
             border-radius: 35px;
@@ -392,14 +395,14 @@
             height: 100%;
             border-radius: 50%;
             background: conic-gradient(
-                var(--accent-pink) 0deg 45deg,
-                var(--cta-green) 45deg 90deg,
-                var(--accent-pink) 90deg 135deg,
-                var(--cta-green) 135deg 180deg,
-                var(--accent-pink) 180deg 225deg,
-                var(--cta-green) 225deg 270deg,
-                var(--accent-pink) 270deg 315deg,
-                var(--cta-green) 315deg 360deg
+                #ff0080 0deg 45deg,
+                #00ff66 45deg 90deg,
+                #ff0080 90deg 135deg,
+                #00ff66 135deg 180deg,
+                #ff0080 180deg 225deg,
+                #00ff66 225deg 270deg,
+                #ff0080 270deg 315deg,
+                #00ff66 315deg 360deg
             );
             position: relative;
             transition: transform 3s cubic-bezier(0.23, 1, 0.32, 1);
@@ -412,8 +415,8 @@
             transform: translate(-50%, -50%);
             width: 80px;
             height: 80px;
-            background: var(--primary-bg);
-            border: 3px solid var(--cta-green);
+            background: #1a2849;
+            border: 3px solid #00ff66;
             border-radius: 50%;
             color: white;
             font-weight: bold;
@@ -423,9 +426,121 @@
         }
 
         .wheel-button:hover {
-            background: var(--cta-green);
-            color: var(--primary-bg);
+            background: #00ff66;
+            color: #1a2849;
             transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* Footer Section */
+        .footer-section {
+            background: rgba(0,0,0,0.3);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .footer-cta {
+            margin-bottom: 40px;
+        }
+
+        .footer-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .footer-cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .footer-cta-button {
+            display: inline-block;
+            background: #00ff66;
+            color: #1a2849;
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 25px rgba(0,255,102,0.4);
+        }
+
+        .footer-cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 40px rgba(0,255,102,0.6);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-text {
+            opacity: 0.6;
+            font-size: 0.9rem;
+            color: #ffffff;
+        }
+
+        .footer-text p {
+            margin-bottom: 5px;
+        }
+
+        /* Floating Notifications */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: rgba(26,40,73,0.9);
+            padding: 15px 20px;
+            border-radius: 10px;
+            border-left: 4px solid #00ff66;
+            backdrop-filter: blur(10px);
+            transform: translateX(400px);
+            transition: transform 0.5s ease;
+            z-index: 1001;
+            color: #ffffff;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-close {
+            background: none;
+            border: none;
+            color: white;
+            float: right;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Responsive Design */
@@ -468,484 +583,6 @@
                 height: 200px;
                 font-size: 80px;
             }
-        }
-
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Loading Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Floating Notifications */
-        .notification {
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: var(--card-bg);
-            padding: 15px 20px;
-            border-radius: 10px;
-            border-left: 4px solid var(--cta-green);
-            backdrop-filter: blur(10px);
-            transform: translateX(400px);
-            transition: transform 0.5s ease;
-            z-index: 1001;
-        }
-
-        .notification.show {
-            transform: translateX(0);
-        }
-
-        .notification-close {
-            background: none;
-            border: none;
-            color: white;
-            float: right;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-
-        /* Accumulators Section */
-        .accumulators-section {
-            padding: 80px 0;
-            background: rgba(255,255,255,0.02);
-        }
-
-        .accumulators-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .accumulator-card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .accumulator-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,255,136,0.15);
-        }
-
-        .accumulator-header {
-            padding: 25px;
-            background: linear-gradient(135deg, var(--accent-pink), #ff4da6);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .accumulator-header h3 {
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
-
-        .total-coef {
-            font-size: 1.1rem;
-        }
-
-        .total-coef span {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--cta-green);
-        }
-
-        .matches {
-            padding: 20px;
-        }
-
-        .match {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 10px;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            align-items: center;
-        }
-
-        .match:last-child {
-            border-bottom: none;
-        }
-
-        .teams {
-            font-weight: 500;
-        }
-
-        .bet {
-            text-align: center;
-            padding: 5px 10px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            font-size: 0.9rem;
-        }
-
-        .coef {
-            text-align: center;
-            font-weight: bold;
-            color: var(--cta-green);
-            font-size: 1.1rem;
-        }
-
-        .accumulator-footer {
-            padding: 20px;
-            background: rgba(255,255,255,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .potential-win {
-            font-size: 1.1rem;
-        }
-
-        .potential-win strong {
-            color: var(--cta-green);
-            font-size: 1.2rem;
-        }
-
-        .bet-button {
-            background: var(--cta-green);
-            color: var(--primary-bg);
-            border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .bet-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0,255,102,0.4);
-        }
-
-        /* Reviews Section */
-        .reviews-section {
-            padding: 80px 0;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .review-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .review-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,255,136,0.15);
-        }
-
-        .review-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--logo-green);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-        }
-
-        .user-name {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .win-amount {
-            color: var(--cta-green);
-            font-weight: bold;
-            font-size: 0.95rem;
-        }
-
-        .review-text {
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-
-        .review-rating {
-            font-size: 1.2rem;
-        }
-
-        /* Mobile App Section */
-        .app-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, rgba(0,255,136,0.05), rgba(255,0,128,0.05));
-        }
-
-        .app-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .app-benefits {
-            margin-top: 30px;
-        }
-
-        .app-benefit {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .benefit-icon {
-            font-size: 1.5rem;
-        }
-
-        .qr-code {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .qr-placeholder {
-            width: 200px;
-            height: 200px;
-            background: white;
-            border-radius: 15px;
-            margin: 0 auto 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-bg);
-            font-weight: bold;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .qr-pattern {
-            width: 80%;
-            height: 80%;
-            background: repeating-linear-gradient(
-                0deg,
-                var(--primary-bg) 0px,
-                var(--primary-bg) 5px,
-                transparent 5px,
-                transparent 10px
-            ),
-            repeating-linear-gradient(
-                90deg,
-                var(--primary-bg) 0px,
-                var(--primary-bg) 5px,
-                transparent 5px,
-                transparent 10px
-            );
-            margin-bottom: 10px;
-        }
-
-        .download-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .download-btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .download-btn.android {
-            background: var(--cta-green);
-            color: var(--primary-bg);
-        }
-
-        .download-btn.ios {
-            background: linear-gradient(45deg, var(--accent-pink), #ff4da6);
-            color: white;
-        }
-
-        .download-btn:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            padding: 80px 0;
-        }
-
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 20px;
-            background: var(--card-bg);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 25px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background: rgba(255,255,255,0.05);
-        }
-
-        .faq-toggle {
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-toggle {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            padding: 0 25px;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 0 25px 25px;
-            max-height: 200px;
-        }
-
-        /* Footer Section */
-        .footer-section {
-            background: rgba(0,0,0,0.3);
-            padding: 60px 0 40px;
-            text-align: center;
-        }
-
-        .footer-cta {
-            margin-bottom: 40px;
-        }
-
-        .footer-cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .footer-cta p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-        }
-
-        .footer-cta-button {
-            display: inline-block;
-            background: var(--cta-green);
-            color: var(--primary-bg);
-            padding: 18px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 25px rgba(0,255,102,0.4);
-        }
-
-        .footer-cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 40px rgba(0,255,102,0.6);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-white);
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-        }
-
-        .footer-text {
-            opacity: 0.6;
-            font-size: 0.9rem;
-        }
-
-        .footer-text p {
-            margin-bottom: 5px;
-        }
-
-        /* Additional Mobile Responsive */
-        @media (max-width: 768px) {
-            .accumulators-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .match {
-                grid-template-columns: 1fr;
-                gap: 5px;
-                text-align: center;
-            }
-
-            .accumulator-footer {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .app-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
 
             .footer-links {
                 gap: 15px;
@@ -954,10 +591,11 @@
             .footer-cta h2 {
                 font-size: 2rem;
             }
+        }
 
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -1350,12 +988,20 @@
     </div>
 
     <script>
+        // Ensure page loads with correct background
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.backgroundColor = '#1a2849';
+            document.documentElement.style.backgroundColor = '#1a2849';
+        });
+
         // Online counter animation
         function updateOnlineCount() {
             const counter = document.getElementById('online-count');
-            const baseCount = 2800;
-            const randomAdd = Math.floor(Math.random() * 100);
-            counter.textContent = (baseCount + randomAdd).toLocaleString();
+            if (counter) {
+                const baseCount = 2800;
+                const randomAdd = Math.floor(Math.random() * 100);
+                counter.textContent = (baseCount + randomAdd).toLocaleString();
+            }
         }
 
         setInterval(updateOnlineCount, 10000);
@@ -1366,28 +1012,30 @@
             const minutes = document.getElementById('minutes');
             const seconds = document.getElementById('seconds');
             
-            let h = parseInt(hours.textContent);
-            let m = parseInt(minutes.textContent);
-            let s = parseInt(seconds.textContent);
-            
-            s--;
-            if (s < 0) {
-                s = 59;
-                m--;
-                if (m < 0) {
-                    m = 59;
-                    h--;
-                    if (h < 0) {
-                        h = 71;
+            if (hours && minutes && seconds) {
+                let h = parseInt(hours.textContent);
+                let m = parseInt(minutes.textContent);
+                let s = parseInt(seconds.textContent);
+                
+                s--;
+                if (s < 0) {
+                    s = 59;
+                    m--;
+                    if (m < 0) {
                         m = 59;
-                        s = 59;
+                        h--;
+                        if (h < 0) {
+                            h = 71;
+                            m = 59;
+                            s = 59;
+                        }
                     }
                 }
+                
+                hours.textContent = h.toString().padStart(2, '0');
+                minutes.textContent = m.toString().padStart(2, '0');
+                seconds.textContent = s.toString().padStart(2, '0');
             }
-            
-            hours.textContent = h.toString().padStart(2, '0');
-            minutes.textContent = m.toString().padStart(2, '0');
-            seconds.textContent = s.toString().padStart(2, '0');
         }
 
         setInterval(updateTimer, 1000);
@@ -1395,14 +1043,16 @@
         // Wheel of Fortune
         function spinWheel() {
             const wheel = document.getElementById('wheel');
-            const randomDegree = Math.floor(Math.random() * 360) + 720; // At least 2 full spins
-            wheel.style.transform = `rotate(${randomDegree}deg)`;
-            
-            setTimeout(() => {
-                const prizes = ['500₽', '1000₽', '2000₽', '5000₽', 'Free Bet', '100₽', '10000₽', 'Jackpot'];
-                const prizeIndex = Math.floor((randomDegree % 360) / 45);
-                alert(`Поздравляем! Вы выиграли: ${prizes[prizeIndex]}`);
-            }, 3000);
+            if (wheel) {
+                const randomDegree = Math.floor(Math.random() * 360) + 720;
+                wheel.style.transform = `rotate(${randomDegree}deg)`;
+                
+                setTimeout(() => {
+                    const prizes = ['500₽', '1000₽', '2000₽', '5000₽', 'Free Bet', '100₽', '10000₽', 'Jackpot'];
+                    const prizeIndex = Math.floor((randomDegree % 360) / 45);
+                    alert(`Поздравляем! Вы выиграли: ${prizes[prizeIndex]}`);
+                }, 3000);
+            }
         }
 
         // Fade in animation on scroll
@@ -1419,34 +1069,41 @@
         }
 
         window.addEventListener('scroll', checkFadeIn);
-        checkFadeIn(); // Check on load
+        checkFadeIn();
 
         // Floating notifications
         function showNotification() {
             const notification = document.getElementById('notification');
-            const names = ['Алексей', 'Мария', 'Дмитрий', 'Анна', 'Сергей', 'Елена'];
-            const amounts = ['12,450₽', '8,900₽', '25,670₽', '45,890₽', '7,320₽', '18,900₽'];
-            
-            const randomName = names[Math.floor(Math.random() * names.length)];
-            const randomAmount = amounts[Math.floor(Math.random() * amounts.length)];
-            
-            document.getElementById('notification-text').textContent = 
-                `Игрок ${randomName} выиграл ${randomAmount}!`;
-            
-            notification.classList.add('show');
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 5000);
+            if (notification) {
+                const names = ['Алексей', 'Мария', 'Дмитрий', 'Анна', 'Сергей', 'Елена'];
+                const amounts = ['12,450₽', '8,900₽', '25,670₽', '45,890₽', '7,320₽', '18,900₽'];
+                
+                const randomName = names[Math.floor(Math.random() * names.length)];
+                const randomAmount = amounts[Math.floor(Math.random() * amounts.length)];
+                
+                const textElement = document.getElementById('notification-text');
+                if (textElement) {
+                    textElement.textContent = `Игрок ${randomName} выиграл ${randomAmount}!`;
+                }
+                
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 5000);
+            }
         }
 
         function closeNotification() {
-            document.getElementById('notification').classList.remove('show');
+            const notification = document.getElementById('notification');
+            if (notification) {
+                notification.classList.remove('show');
+            }
         }
 
         // Show notifications periodically
         setInterval(showNotification, 15000);
-        setTimeout(showNotification, 3000); // First notification after 3 seconds
+        setTimeout(showNotification, 3000);
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1465,10 +1122,12 @@
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(26,40,73,0.98)';
-            } else {
-                header.style.background = 'rgba(26,40,73,0.95)';
+            if (header) {
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(26,40,73,0.98)';
+                } else {
+                    header.style.background = 'rgba(26,40,73,0.95)';
+                }
             }
         });
 
