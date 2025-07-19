@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LILBET - Лучшие коэффициенты и быстрые выплаты</title>
+    <meta name="description" content="Официальный сайт LILBET. Высокие коэффициенты до 98%, быстрые выплаты, приветственный бонус 100% до 50,000₽">
+    <style>
+        :root {
+            --primary-bg: #1a2849;
+            --logo-green: linear-gradient(45deg, #00ff88, #00cc66);
+            --accent-pink: #ff0080;
+            --text-white: #ffffff;
+            --cta-green: #00ff66;
+            --geometry: rgba(255,255,255,0.1);
+            --card-bg: rgba(26,40,73,0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Geometric Background Elements */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, var(--geometry) 2px, transparent 2px),
+                radial-gradient(circle at 80% 80%, var(--geometry) 1px, transparent 1px),
+                linear-gradient(45deg, transparent 48%, var(--geometry) 49%, var(--geometry) 51%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, var(--geometry) 49%, var(--geometry) 51%, transparent 52%);
+            background-size: 100px 100px, 150px 150px, 200px 200px, 200px 200px;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26,40,73,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            background: var(--logo-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .header-cta {
+            background: var(--cta-green);
+            color: var(--primary-bg);
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0,255,102,0.3);
+        }
+
+        .header-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0,255,102,0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+            background: var(--primary-bg);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text h1 .accent {
+            background: linear-gradient(45deg, var(--accent-pink), #ff4da6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--cta-green);
+            color: var(--primary-bg);
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 25px rgba(0,255,102,0.4);
+            margin-bottom: 30px;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 40px rgba(0,255,102,0.6);
+        }
+
+        .online-counter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .online-dot {
+            width: 12px;
+            height: 12px;
+            background: var(--cta-green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .sports-icon {
+            width: 300px;
+            height: 300px;
+            background: var(--logo-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 0 50px rgba(0,255,136,0.3);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Trust Section */
+        .trust-section {
+            padding: 80px 0;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .trust-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .trust-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,255,136,0.2);
+        }
+
+        .trust-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--cta-green);
+        }
+
+        .trust-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .trust-desc {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .benefit-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--logo-green);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,255,136,0.2);
+        }
+
+        .benefit-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .benefit-title .accent {
+            color: var(--accent-pink);
+        }
+
+        .benefit-desc {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Welcome Bonus Section */
+        .bonus-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(255,0,128,0.1), rgba(0,255,136,0.1));
+            text-align: center;
+        }
+
+        .bonus-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .bonus-title .accent {
+            color: var(--accent-pink);
+        }
+
+        .bonus-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .timer-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            min-width: 80px;
+            backdrop-filter: blur(10px);
+        }
+
+        .timer-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--cta-green);
+        }
+
+        .timer-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .bonus-cta {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--accent-pink), #ff4da6);
+            color: white;
+            padding: 20px 50px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(255,0,128,0.4);
+        }
+
+        .bonus-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(255,0,128,0.6);
+        }
+
+        /* Wheel of Fortune */
+        .wheel-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .wheel-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 40px auto;
+        }
+
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--accent-pink) 0deg 45deg,
+                var(--cta-green) 45deg 90deg,
+                var(--accent-pink) 90deg 135deg,
+                var(--cta-green) 135deg 180deg,
+                var(--accent-pink) 180deg 225deg,
+                var(--cta-green) 225deg 270deg,
+                var(--accent-pink) 270deg 315deg,
+                var(--cta-green) 315deg 360deg
+            );
+            position: relative;
+            transition: transform 3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .wheel-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: var(--primary-bg);
+            border: 3px solid var(--cta-green);
+            border-radius: 50%;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .wheel-button:hover {
+            background: var(--cta-green);
+            color: var(--primary-bg);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .trust-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .timer {
+                gap: 10px;
+            }
+
+            .timer-item {
+                padding: 15px 10px;
+                min-width: 60px;
+            }
+
+            .timer-number {
+                font-size: 1.5rem;
+            }
+
+            .sports-icon {
+                width: 200px;
+                height: 200px;
+                font-size: 80px;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating Notifications */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: var(--card-bg);
+            padding: 15px 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--cta-green);
+            backdrop-filter: blur(10px);
+            transform: translateX(400px);
+            transition: transform 0.5s ease;
+            z-index: 1001;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-close {
+            background: none;
+            border: none;
+            color: white;
+            float: right;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        /* Accumulators Section */
+        .accumulators-section {
+            padding: 80px 0;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .accumulators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .accumulator-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .accumulator-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,255,136,0.15);
+        }
+
+        .accumulator-header {
+            padding: 25px;
+            background: linear-gradient(135deg, var(--accent-pink), #ff4da6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accumulator-header h3 {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .total-coef {
+            font-size: 1.1rem;
+        }
+
+        .total-coef span {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--cta-green);
+        }
+
+        .matches {
+            padding: 20px;
+        }
+
+        .match {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 10px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            align-items: center;
+        }
+
+        .match:last-child {
+            border-bottom: none;
+        }
+
+        .teams {
+            font-weight: 500;
+        }
+
+        .bet {
+            text-align: center;
+            padding: 5px 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        .coef {
+            text-align: center;
+            font-weight: bold;
+            color: var(--cta-green);
+            font-size: 1.1rem;
+        }
+
+        .accumulator-footer {
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .potential-win {
+            font-size: 1.1rem;
+        }
+
+        .potential-win strong {
+            color: var(--cta-green);
+            font-size: 1.2rem;
+        }
+
+        .bet-button {
+            background: var(--cta-green);
+            color: var(--primary-bg);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .bet-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,255,102,0.4);
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            padding: 80px 0;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,255,136,0.15);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--logo-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .user-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .win-amount {
+            color: var(--cta-green);
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .review-rating {
+            font-size: 1.2rem;
+        }
+
+        /* Mobile App Section */
+        .app-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(0,255,136,0.05), rgba(255,0,128,0.05));
+        }
+
+        .app-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .app-benefits {
+            margin-top: 30px;
+        }
+
+        .app-benefit {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .benefit-icon {
+            font-size: 1.5rem;
+        }
+
+        .qr-code {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .qr-placeholder {
+            width: 200px;
+            height: 200px;
+            background: white;
+            border-radius: 15px;
+            margin: 0 auto 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-bg);
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qr-pattern {
+            width: 80%;
+            height: 80%;
+            background: repeating-linear-gradient(
+                0deg,
+                var(--primary-bg) 0px,
+                var(--primary-bg) 5px,
+                transparent 5px,
+                transparent 10px
+            ),
+            repeating-linear-gradient(
+                90deg,
+                var(--primary-bg) 0px,
+                var(--primary-bg) 5px,
+                transparent 5px,
+                transparent 10px
+            );
+            margin-bottom: 10px;
+        }
+
+        .download-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .download-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn.android {
+            background: var(--cta-green);
+            color: var(--primary-bg);
+        }
+
+        .download-btn.ios {
+            background: linear-gradient(45deg, var(--accent-pink), #ff4da6);
+            color: white;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px;
+            max-height: 200px;
+        }
+
+        /* Footer Section */
+        .footer-section {
+            background: rgba(0,0,0,0.3);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .footer-cta {
+            margin-bottom: 40px;
+        }
+
+        .footer-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .footer-cta-button {
+            display: inline-block;
+            background: var(--cta-green);
+            color: var(--primary-bg);
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 25px rgba(0,255,102,0.4);
+        }
+
+        .footer-cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 40px rgba(0,255,102,0.6);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-text {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        .footer-text p {
+            margin-bottom: 5px;
+        }
+
+        /* Additional Mobile Responsive */
+        @media (max-width: 768px) {
+            .accumulators-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .match {
+                grid-template-columns: 1fr;
+                gap: 5px;
+                text-align: center;
+            }
+
+            .accumulator-footer {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .app-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .footer-links {
+                gap: 15px;
+            }
+
+            .footer-cta h2 {
+                font-size: 2rem;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">lilbet</a>
+                <a href="#bonus" class="header-cta">РЕГИСТРАЦИЯ</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1><span class="accent">ACCUMULATOR</span> OF THE DAY</h1>
+                    <p class="hero-subtitle">Choose your bet from exciting sporting events!</p>
+                    <a href="#bonus" class="hero-cta">CHOOSE</a>
+                    <div class="online-counter">
+                        <div class="online-dot"></div>
+                        <span id="online-count">2,847</span> players online
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="sports-icon">⚽</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section fade-in">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">🛡️</div>
+                    <div class="trust-title">Лицензия Кюрасао</div>
+                    <div class="trust-desc">Официальная лицензия и полная безопасность</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🔒</div>
+                    <div class="trust-title">SSL Защита</div>
+                    <div class="trust-desc">256-битное шифрование данных</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">⚡</div>
+                    <div class="trust-title">Быстрые выплаты</div>
+                    <div class="trust-desc">Вывод средств за 5 минут</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">💬</div>
+                    <div class="trust-title">Поддержка 24/7</div>
+                    <div class="trust-desc">Круглосуточная помощь игрокам</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают LILBET</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3 class="benefit-title"><span class="accent">ВЫСОКИЕ</span> коэффициенты до 98%</h3>
+                    <p class="benefit-desc">Максимальная маржа всего 2% - лучшие условия на рынке</p>
+                </div>
+                <div class="benefit-card">
+                    <h3 class="benefit-title"><span class="accent">LIVE</span> ставки на 1000+ событий</h3>
+                    <p class="benefit-desc">Ставки в режиме реального времени на все популярные виды спорта</p>
+                </div>
+                <div class="benefit-card">
+                    <h3 class="benefit-title"><span class="accent">БЫСТРЫЕ</span> выплаты за 5 минут</h3>
+                    <p class="benefit-desc">Мгновенный вывод выигрышей на любые платежные системы</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Bonus Section -->
+    <section class="bonus-section fade-in" id="bonus">
+        <div class="container">
+            <h2 class="bonus-title">WELCOME <span class="accent">BONUS</span> 100%</h2>
+            <p class="bonus-subtitle">На первый депозит до 50,000₽</p>
+            
+            <div class="timer">
+                <div class="timer-item">
+                    <div class="timer-number" id="hours">71</div>
+                    <div class="timer-label">часов</div>
+                </div>
+                <div class="timer-item">
+                    <div class="timer-number" id="minutes">42</div>
+                    <div class="timer-label">минут</div>
+                </div>
+                <div class="timer-item">
+                    <div class="timer-number" id="seconds">15</div>
+                    <div class="timer-label">секунд</div>
+                </div>
+            </div>
+            
+            <a href="#" class="bonus-cta">ПОЛУЧИТЬ БОНУС</a>
+        </div>
+    </section>
+
+    <!-- Wheel of Fortune -->
+    <section class="wheel-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Колесо удачи</h2>
+            <p>Крути колесо и получай дополнительные бонусы!</p>
+            
+            <div class="wheel-container">
+                <div class="wheel" id="wheel"></div>
+                <button class="wheel-button" onclick="spinWheel()">КРУТИТЬ</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Accumulators -->
+    <section class="accumulators-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Аккумуляторы дня</h2>
+            <div class="accumulators-grid">
+                <div class="accumulator-card">
+                    <div class="accumulator-header">
+                        <h3>Футбольный экспресс</h3>
+                        <div class="total-coef">Общий коэф: <span>7.45</span></div>
+                    </div>
+                    <div class="matches">
+                        <div class="match">
+                            <span class="teams">Манчестер Сити - Арсенал</span>
+                            <span class="bet">П1</span>
+                            <span class="coef">1.95</span>
+                        </div>
+                        <div class="match">
+                            <span class="teams">Барселона - Реал Мадрид</span>
+                            <span class="bet">ТБ 2.5</span>
+                            <span class="coef">1.85</span>
+                        </div>
+                        <div class="match">
+                            <span class="teams">ПСЖ - Марсель</span>
+                            <span class="bet">П1</span>
+                            <span class="coef">2.1</span>
+                        </div>
+                    </div>
+                    <div class="accumulator-footer">
+                        <div class="potential-win">Ставка 1000₽ = <strong>7,450₽</strong></div>
+                        <button class="bet-button">ПОСТАВИТЬ</button>
+                    </div>
+                </div>
+
+                <div class="accumulator-card">
+                    <div class="accumulator-header">
+                        <h3>Баскетбольный микс</h3>
+                        <div class="total-coef">Общий коэф: <span>12.8</span></div>
+                    </div>
+                    <div class="matches">
+                        <div class="match">
+                            <span class="teams">Лейкерс - Воинс</span>
+                            <span class="bet">ТБ 220.5</span>
+                            <span class="coef">1.9</span>
+                        </div>
+                        <div class="match">
+                            <span class="teams">Бостон - Майами</span>
+                            <span class="bet">П1</span>
+                            <span class="coef">2.2</span>
+                        </div>
+                        <div class="match">
+                            <span class="teams">Феникс - Денвер</span>
+                            <span class="bet">П2</span>
+                            <span class="coef">3.05</span>
+                        </div>
+                    </div>
+                    <div class="accumulator-footer">
+                        <div class="potential-win">Ставка 1000₽ = <strong>12,800₽</strong></div>
+                        <button class="bet-button">ПОСТАВИТЬ</button>
+                    </div>
+                </div>
+
+                <div class="accumulator-card">
+                    <div class="accumulator-header">
+                        <h3>Теннисная связка</h3>
+                        <div class="total-coef">Общий коэф: <span>5.67</span></div>
+                    </div>
+                    <div class="matches">
+                        <div class="match">
+                            <span class="teams">Джокович - Надаль</span>
+                            <span class="bet">П1</span>
+                            <span class="coef">1.75</span>
+                        </div>
+                        <div class="match">
+                            <span class="teams">Медведев - Циципас</span>
+                            <span class="bet">ТБ 21.5</span>
+                            <span class="coef">1.8</span>
+                        </div>
+                        <div class="match">
+                            <span class="teams">Рублев - Алькарас</span>
+                            <span class="bet">П2</span>
+                            <span class="coef">1.8</span>
+                        </div>
+                    </div>
+                    <div class="accumulator-footer">
+                        <div class="potential-win">Ставка 1000₽ = <strong>5,670₽</strong></div>
+                        <button class="bet-button">ПОСТАВИТЬ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Отзывы игроков</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">👨‍💼</div>
+                        <div class="user-info">
+                            <div class="user-name">Александр К.</div>
+                            <div class="win-amount">Выиграл: 127,500₽</div>
+                        </div>
+                    </div>
+                    <div class="review-text">
+                        "Играю на LILBET уже полгода. Выплаты действительно быстрые, коэффициенты высокие. За эти месяцы выиграл больше 300к рублей!"
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">👩‍💻</div>
+                        <div class="user-info">
+                            <div class="user-name">Мария В.</div>
+                            <div class="win-amount">Выиграла: 89,200₽</div>
+                        </div>
+                    </div>
+                    <div class="review-text">
+                        "Лучшая букмекерская контора! Особенно нравятся live ставки. Поддержка отвечает быстро, никаких проблем с выводом."
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">👨‍🎓</div>
+                        <div class="user-info">
+                            <div class="user-name">Дмитрий П.</div>
+                            <div class="win-amount">Выиграл: 156,800₽</div>
+                        </div>
+                    </div>
+                    <div class="review-text">
+                        "Приветственный бонус помог неплохо стартовать. Сейчас стабильно получаю прибыль. Рекомендую всем!"
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile App Section -->
+    <section class="app-section fade-in">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-text">
+                    <h2 class="section-title">Мобильное приложение LILBET</h2>
+                    <div class="app-benefits">
+                        <div class="app-benefit">
+                            <span class="benefit-icon">⚡</span>
+                            <span>Быстрые ставки в один клик</span>
+                        </div>
+                        <div class="app-benefit">
+                            <span class="benefit-icon">📱</span>
+                            <span>Удобный мобильный интерфейс</span>
+                        </div>
+                        <div class="app-benefit">
+                            <span class="benefit-icon">🔔</span>
+                            <span>Push-уведомления о матчах</span>
+                        </div>
+                        <div class="app-benefit">
+                            <span class="benefit-icon">💰</span>
+                            <span>Эксклюзивные бонусы в приложении</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-download">
+                    <div class="qr-code">
+                        <div class="qr-placeholder">
+                            <div class="qr-pattern"></div>
+                            QR код для скачивания
+                        </div>
+                    </div>
+                    <div class="download-buttons">
+                        <button class="download-btn android">📱 Android APK</button>
+                        <button class="download-btn ios">🍎 iOS App Store</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Как получить приветственный бонус?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Зарегистрируйтесь на сайте, подтвердите email и телефон, сделайте первый депозит от 500₽. Бонус 100% будет автоматически зачислен на ваш счет.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Сколько времени занимает вывод средств?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Выплаты обрабатываются в течение 5 минут для электронных кошельков и до 24 часов для банковских карт.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Есть ли комиссия за вывод?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Первые 3 вывода в месяц без комиссии. Далее комиссия составляет 2% от суммы вывода.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Какие виды спорта доступны для ставок?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Футбол, баскетбол, теннис, хоккей, волейбол, бокс, MMA, киберспорт и многие другие виды спорта.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Можно ли играть с мобильного устройства?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Да, у нас есть мобильная версия сайта и приложения для Android и iOS с полным функционалом.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta">
+                <h2>Начни выигрывать уже сегодня!</h2>
+                <p>Зарегистрируйся сейчас и получи бонус 100% к первому депозиту</p>
+                <a href="#" class="footer-cta-button">РЕГИСТРАЦИЯ</a>
+            </div>
+            <div class="footer-info">
+                <div class="footer-links">
+                    <a href="#">Правила</a>
+                    <a href="#">Ответственная игра</a>
+                    <a href="#">Поддержка</a>
+                    <a href="#">Лицензия</a>
+                </div>
+                <div class="footer-text">
+                    <p>© 2024 LILBET. Все права защищены.</p>
+                    <p>Лицензия Кюрасао #8048/JAZ2020-013</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Notification -->
+    <div class="notification" id="notification">
+        <button class="notification-close" onclick="closeNotification()">&times;</button>
+        <div id="notification-text">Игрок Алексей выиграл 45,890₽!</div>
+    </div>
+
+    <script>
+        // Online counter animation
+        function updateOnlineCount() {
+            const counter = document.getElementById('online-count');
+            const baseCount = 2800;
+            const randomAdd = Math.floor(Math.random() * 100);
+            counter.textContent = (baseCount + randomAdd).toLocaleString();
+        }
+
+        setInterval(updateOnlineCount, 10000);
+
+        // Timer countdown
+        function updateTimer() {
+            const hours = document.getElementById('hours');
+            const minutes = document.getElementById('minutes');
+            const seconds = document.getElementById('seconds');
+            
+            let h = parseInt(hours.textContent);
+            let m = parseInt(minutes.textContent);
+            let s = parseInt(seconds.textContent);
+            
+            s--;
+            if (s < 0) {
+                s = 59;
+                m--;
+                if (m < 0) {
+                    m = 59;
+                    h--;
+                    if (h < 0) {
+                        h = 71;
+                        m = 59;
+                        s = 59;
+                    }
+                }
+            }
+            
+            hours.textContent = h.toString().padStart(2, '0');
+            minutes.textContent = m.toString().padStart(2, '0');
+            seconds.textContent = s.toString().padStart(2, '0');
+        }
+
+        setInterval(updateTimer, 1000);
+
+        // Wheel of Fortune
+        function spinWheel() {
+            const wheel = document.getElementById('wheel');
+            const randomDegree = Math.floor(Math.random() * 360) + 720; // At least 2 full spins
+            wheel.style.transform = `rotate(${randomDegree}deg)`;
+            
+            setTimeout(() => {
+                const prizes = ['500₽', '1000₽', '2000₽', '5000₽', 'Free Bet', '100₽', '10000₽', 'Jackpot'];
+                const prizeIndex = Math.floor((randomDegree % 360) / 45);
+                alert(`Поздравляем! Вы выиграли: ${prizes[prizeIndex]}`);
+            }, 3000);
+        }
+
+        // Fade in animation on scroll
+        function checkFadeIn() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkFadeIn);
+        checkFadeIn(); // Check on load
+
+        // Floating notifications
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            const names = ['Алексей', 'Мария', 'Дмитрий', 'Анна', 'Сергей', 'Елена'];
+            const amounts = ['12,450₽', '8,900₽', '25,670₽', '45,890₽', '7,320₽', '18,900₽'];
+            
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const randomAmount = amounts[Math.floor(Math.random() * amounts.length)];
+            
+            document.getElementById('notification-text').textContent = 
+                `Игрок ${randomName} выиграл ${randomAmount}!`;
+            
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 5000);
+        }
+
+        function closeNotification() {
+            document.getElementById('notification').classList.remove('show');
+        }
+
+        // Show notifications periodically
+        setInterval(showNotification, 15000);
+        setTimeout(showNotification, 3000); // First notification after 3 seconds
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26,40,73,0.98)';
+            } else {
+                header.style.background = 'rgba(26,40,73,0.95)';
+            }
+        });
+
+        // FAQ Toggle functionality
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Animate accumulator coefficients on load
+        function animateCoefficients() {
+            const coefficients = document.querySelectorAll('.total-coef span');
+            coefficients.forEach(coef => {
+                const finalValue = parseFloat(coef.textContent);
+                let currentValue = 1.0;
+                const increment = (finalValue - 1.0) / 50;
+                
+                const interval = setInterval(() => {
+                    currentValue += increment;
+                    if (currentValue >= finalValue) {
+                        currentValue = finalValue;
+                        clearInterval(interval);
+                    }
+                    coef.textContent = currentValue.toFixed(2);
+                }, 50);
+            });
+        }
+
+        // Initialize animations after page load
+        window.addEventListener('load', () => {
+            setTimeout(animateCoefficients, 1000);
+        });
+
+        // Add click effects to bet buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            const betButtons = document.querySelectorAll('.bet-button');
+            betButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Create ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = button.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        width: ${size}px;
+                        height: ${size}px;
+                        background: rgba(255,255,255,0.3);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        left: ${x}px;
+                        top: ${y}px;
+                        pointer-events: none;
+                    `;
+                    
+                    button.style.position = 'relative';
+                    button.style.overflow = 'hidden';
+                    button.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                    
+                    // Show betting modal (placeholder)
+                    setTimeout(() => {
+                        alert('Переход к размещению ставки...');
+                    }, 300);
+                });
+            });
+        });
+
+        // Add CSS for ripple animation
+        const rippleCSS = document.createElement('style');
+        rippleCSS.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(rippleCSS);
+
+        // Performance optimization: Lazy load heavy animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                } else {
+                    entry.target.style.animationPlayState = 'paused';
+                }
+            });
+        }, observerOptions);
+
+        // Observe floating and pulse animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.sports-icon, .online-dot');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+
+        // Add meta tags for better SEO and performance
+        const metaTags = [
+            { name: 'robots', content: 'index, follow' },
+            { name: 'author', content: 'LILBET' },
+            { name: 'theme-color', content: '#1a2849' },
+            { property: 'og:title', content: 'LILBET - Лучшие коэффициенты и быстрые выплаты' },
+            { property: 'og:description', content: 'Высокие коэффициенты до 98%, быстрые выплаты, приветственный бонус 100%' },
+            { property: 'og:type', content: 'website' },
+            { property: 'og:image', content: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MzAiIHZpZXdCb3g9IjAgMCAxMjAwIDYzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjMwIiBmaWxsPSIjMWEyODQ5Ii8+Cjx0ZXh0IHg9IjYwMCIgeT0iMzE1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNzIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ1cmwoI2dyYWRpZW50KSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkxJTEJFVDwvdGV4dD4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMDBmZjg4O3N0b3Atb3BhY2l0eToxIiAvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMGNjNjY7c3RvcC1vcGFjaXR5OjEiIC8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+' }
+        ];
+
+        metaTags.forEach(tag => {
+            const meta = document.createElement('meta');
+            if (tag.name) meta.name = tag.name;
+            if (tag.property) meta.setAttribute('property', tag.property);
+            meta.content = tag.content;
+            document.head.appendChild(meta);
+        });
+    </script>
+</body>
+</html>
